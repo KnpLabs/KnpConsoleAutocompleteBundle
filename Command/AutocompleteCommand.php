@@ -39,7 +39,7 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $commands = $this->application->getCommands();
+        $commands = $this->application->all();
         $commands = array_keys($commands);
 
         $output->write(join(" ", $commands), false); 
