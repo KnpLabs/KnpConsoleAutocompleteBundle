@@ -33,5 +33,10 @@ _console()
     COMPREPLY=( $(compgen -f ${cur}) )
     return 0
 }
-complete -F _console console
+complete -F _console console 
+complete -F _console console-dev
+complete -F _console console-test
+complete -F _console console-prod
+complete -F _console console-staging
+complete -F _console Symfony
 COMP_WORDBREAKS=${COMP_WORDBREAKS//:}
