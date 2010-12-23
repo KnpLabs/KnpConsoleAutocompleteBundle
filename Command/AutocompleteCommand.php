@@ -1,6 +1,6 @@
 <?php
 
-namespace Bundle\ConsoleAutocompleteBundle\Command;
+namespace Bundle\Knplabs\ConsoleAutocompleteBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command;
 use Symfony\Component\Console\Input\InputInterface;
