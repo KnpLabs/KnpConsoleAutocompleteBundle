@@ -4,6 +4,7 @@ namespace Knplabs\ConsoleAutocompleteBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -22,6 +23,7 @@ class AutocompleteCommand extends Command\Command
     {
         $this
             ->setDefinition(array(
+                new InputArgument('command_name', InputArgument::OPTIONAL, 'A command name to generate autocomplete options for'),
             ))
             ->setName('console:autocomplete')
             ->setHelp(<<<EOT
@@ -30,8 +32,7 @@ For the moment, it just conveniently lists all commands in a shell friendly form
 
   <info>php app/console console:autocomplete</info>
 EOT
-        );
-        ;
+            );
     }
 
     /**
@@ -39,9 +40,20 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $commands = $this->application->all();
-        $commands = array_keys($commands);
-
-        $output->write(join(" ", $commands), false); 
+        $commandName = $input->getArgument('command_name');
+        if ($commandName !== null && $this->application->has($commandName)) {
+            $options = array_merge(
+                $this->application->get($commandName)->getDefinition()->getOptions(),
+                $this->application->getDefinition()->getOptions()
+            );
+            $options = array_map(function($option) {
+                return '--' . $option->getName();
+            }, $options);
+            $output->write(join(" ", $options), false);
+        } else {
+            $commands = $this->application->all();
+            $commands = array_keys($commands);
+            $output->write(join(" ", $commands), false);
+        }
     }
 }
