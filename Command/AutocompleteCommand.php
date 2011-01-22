@@ -41,19 +41,31 @@ EOT
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $commandName = $input->getArgument('command_name');
+        
         if ($commandName !== null && $this->application->has($commandName)) {
-            $options = array_merge(
-                $this->application->get($commandName)->getDefinition()->getOptions(),
-                $this->application->getDefinition()->getOptions()
-            );
-            $options = array_map(function($option) {
-                return '--' . $option->getName();
-            }, $options);
-            $output->write(join(" ", $options), false);
+            $this->autocompleteOptionName($input, $output, $commandName);
+            
         } else {
-            $commands = $this->application->all();
-            $commands = array_keys($commands);
-            $output->write(join(" ", $commands), false);
+            $this->autocompleteCommandName($input, $output);
         }
+    }
+    
+    protected function autocompleteOptionName(InputInterface $input, OutputInterface $output, $commandName)
+    {
+        $options = array_merge(
+            $this->application->get($commandName)->getDefinition()->getOptions(),
+            $this->application->getDefinition()->getOptions()
+        );
+        $options = array_map(function($option) {
+            return '--' . $option->getName();
+        }, $options);
+        $output->write(join(" ", $options), false);
+    }
+    
+    protected function autocompleteCommandName(InputInterface $input, OutputInterface $output)
+    {
+        $commands = $this->application->all();
+        $commands = array_keys($commands);
+        $output->write(join(" ", $commands), false);
     }
 }
