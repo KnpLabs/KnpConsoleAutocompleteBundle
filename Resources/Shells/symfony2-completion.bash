@@ -26,7 +26,17 @@ _console()
                 return 0
                 ;;
             *)
-            ;;
+                ;;
+        esac
+    fi
+    if [[ ${COMP_CWORD} > 1 ]] ; then
+        case "${cur}" in
+            --*)
+                COMPREPLY=( $(compgen -W "$(${cmd} console:autocomplete ${COMP_WORDS[1]})" -- ${cur}) )
+                return 0
+                ;;
+            *)
+                ;;
         esac
     fi
 
