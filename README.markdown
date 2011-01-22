@@ -33,7 +33,9 @@ The first time you install `ConsoleAutocompleteBundle` in a project, you should 
 
 That's it! Now when you type:
 
-`./app/console doc[TAB]`, you should see an autocompletion.
+`./app/console doc[TAB]`, you should see an autocompletion of the command name.
+
+`./app/console doctrine:data:load --[TAB]`, you should see an autocompletion of the option names.
 
 Valid executable names are:
 
