@@ -44,6 +44,12 @@ Valid executable names are:
 * `console-test`
 * `Symfony`
 
-## Credits
+## Copyright & Credits
 
-[knpLabs](http://www.knplabs.com), Matthieu Bontemps.
+ConsoleAutocompleteBundle Copyright (c) 2011 [knpLabs](http://www.knplabs.com).  
+See LICENSE for details.
+
+Contributors:
+
+* [Matthieu Bontemps](https://github.com/mbontemps)
+* [Justin Hileman](https://github.com/bobthecow)
