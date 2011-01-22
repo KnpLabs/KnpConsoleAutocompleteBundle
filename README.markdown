@@ -8,24 +8,19 @@ Download the bundle and put it under the `Knplabs/` namespace.
 
 If you use git submodules:
 
-    git submodule add git://github.com:knplabs/ConsoleAutocompleteBundle.git src/Knplabs/ConsoleAutocompleteBundle
-
-Add the `Knplabs` namespace in your project's `autoload.php` file:
-
-    # src/autoload.php
-
-    $loader->registerNamespaces(array(
-        'KnpLabs' => __DIR__,
-    ));
+    git submodule add git://github.com/knplabs/ConsoleAutocompleteBundle.git src/Bundle/Knplabs/ConsoleAutocompleteBundle
 
 Then, like for any other bundle, include it in your Kernel class:
 
     public function registerBundles()
     {
         $bundles = array(
+            // enable third-party bundles
             ...
-
-            new Knplabs\ConsoleAutocompleteBundle\KnplabsConsoleAutocompleteBundle(),
+            new Bundle\Knplabs\ConsoleAutocompleteBundle\KnplabsConsoleAutocompleteBundle(),
+            
+            // register your bundles
+            ...
         );
 
         ...
@@ -33,7 +28,7 @@ Then, like for any other bundle, include it in your Kernel class:
     
 The first time you install `ConsoleAutocompleteBundle` in a project, you should add `Resources/Shells/symfony2-completion.bash` in your bash profile (in `~/.bash_profile` on MacOS):
 
-    …
+    ...
     source /path-to-symfony2-completion.bash
 
 That's it! Now when you type:
