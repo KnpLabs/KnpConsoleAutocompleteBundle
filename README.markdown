@@ -46,6 +46,10 @@ Valid executable names are:
 * `console-test`
 * `Symfony`
 
+If none of these names do it for you, you can enable completion for your own executable. Add this line to your bash profile, just below where you sourced `symfony2-completion.bash`:
+
+    complete -F _console my-console-name
+
 ## Copyright & Credits
 
 ConsoleAutocompleteBundle Copyright (c) 2011 [knpLabs](http://www.knplabs.com).  
