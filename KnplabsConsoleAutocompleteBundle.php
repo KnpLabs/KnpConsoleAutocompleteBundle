@@ -1,6 +1,6 @@
 <?php
 
-namespace Bundle\Knplabs\ConsoleAutocompleteBundle;
+namespace Knplabs\Bundle\ConsoleAutocompleteBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle as BaseBundle;
 

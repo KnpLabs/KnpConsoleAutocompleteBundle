@@ -8,7 +8,7 @@ Download the bundle and put it under the `Knplabs/` namespace.
 
 If you use git submodules:
 
-    git submodule add git://github.com/knplabs/ConsoleAutocompleteBundle.git src/Bundle/Knplabs/ConsoleAutocompleteBundle
+    git submodule add https://github.com/knplabs/ConsoleAutocompleteBundle.git vendor/bundles/Knplabs/Bundle/ConsoleAutocompleteBundle
 
 Then, like for any other bundle, include it in your Kernel class:
 
@@ -17,7 +17,7 @@ Then, like for any other bundle, include it in your Kernel class:
         $bundles = array(
             // enable third-party bundles
             ...
-            new Bundle\Knplabs\ConsoleAutocompleteBundle\KnplabsConsoleAutocompleteBundle(),
+            new Knplabs\Bundle\ConsoleAutocompleteBundle\KnplabsConsoleAutocompleteBundle(),
             
             // register your bundles
             ...
@@ -52,7 +52,7 @@ If none of these names do it for you, you can enable completion for your own exe
 
 ## Copyright & Credits
 
-ConsoleAutocompleteBundle Copyright (c) 2011 [knpLabs](http://www.knplabs.com).  
+ConsoleAutocompleteBundle Copyright (c) 2011 [KnpLabs](http://www.KnpLabs.com).  
 See LICENSE for details.
 
 Contributors:
