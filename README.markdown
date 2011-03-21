@@ -40,10 +40,6 @@ That's it! Now when you type:
 Valid executable names are:
 
 * `console`
-* `console-dev`
-* `console-prod`
-* `console-staging`
-* `console-test`
 * `Symfony`
 
 If none of these names do it for you, you can enable completion for your own executable. Add this line to your bash profile, just below where you sourced `symfony2-completion.bash`:
