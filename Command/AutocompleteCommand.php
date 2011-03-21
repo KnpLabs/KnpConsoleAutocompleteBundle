@@ -42,7 +42,7 @@ EOT
     {
         $commandName = $input->getArgument('command_name');
         
-        if ($commandName !== null && $this->application->has($commandName)) {
+        if ($commandName !== null && $this->getApplication()->has($commandName)) {
             $this->autocompleteOptionName($input, $output, $commandName);
             
         } else {
@@ -53,8 +53,8 @@ EOT
     protected function autocompleteOptionName(InputInterface $input, OutputInterface $output, $commandName)
     {
         $options = array_merge(
-            $this->application->get($commandName)->getDefinition()->getOptions(),
-            $this->application->getDefinition()->getOptions()
+            $this->getApplication()->get($commandName)->getDefinition()->getOptions(),
+            $this->getApplication()->getDefinition()->getOptions()
         );
         $options = array_map(function($option) {
             return '--' . $option->getName();
@@ -64,7 +64,7 @@ EOT
     
     protected function autocompleteCommandName(InputInterface $input, OutputInterface $output)
     {
-        $commands = $this->application->all();
+        $commands = $this->getApplication()->all();
         $commands = array_keys($commands);
         $output->write(join(" ", $commands), false);
     }
