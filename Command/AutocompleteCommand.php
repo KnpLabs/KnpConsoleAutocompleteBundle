@@ -2,7 +2,7 @@
 
 namespace Knplabs\Bundle\ConsoleAutocompleteBundle\Command;
 
-use Symfony\Bundle\FrameworkBundle\Command;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -14,7 +14,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  * @subpackage console
  * @author     Matthieu Bontemps <matthieu@knplabs.com>
  */
-class AutocompleteCommand extends Command\Command
+class AutocompleteCommand extends Command
 {
     /**
      * @see Command
