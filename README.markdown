@@ -4,11 +4,11 @@ This bundle provides a simple way of autocompleting your commands in your shell.
 
 ## Installation
 
-Download the bundle and put it under the `Knplabs/` namespace.
+Download the bundle and put it under the `Knp/` namespace.
 
 If you use git submodules:
 
-    git submodule add https://github.com/knplabs/ConsoleAutocompleteBundle.git vendor/bundles/Knplabs/Bundle/ConsoleAutocompleteBundle
+    git submodule add https://github.com/knplabs/ConsoleAutocompleteBundle.git vendor/bundles/Knp/Bundle/ConsoleAutocompleteBundle
 
 Then, like for any other bundle, include it in your Kernel class:
 
@@ -17,7 +17,7 @@ Then, like for any other bundle, include it in your Kernel class:
         $bundles = array(
             // enable third-party bundles
             ...
-            new Knplabs\Bundle\ConsoleAutocompleteBundle\KnplabsConsoleAutocompleteBundle(),
+            new Knp\Bundle\ConsoleAutocompleteBundle\KnpConsoleAutocompleteBundle(),
             
             // register your bundles
             ...

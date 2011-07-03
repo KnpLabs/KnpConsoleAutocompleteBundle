@@ -1,10 +1,10 @@
 <?php
 
-namespace Knplabs\Bundle\ConsoleAutocompleteBundle;
+namespace Knp\Bundle\ConsoleAutocompleteBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle as BaseBundle;
 
-class KnplabsConsoleAutocompleteBundle extends BaseBundle
+class KnpConsoleAutocompleteBundle extends BaseBundle
 {
     /**
      * {@inheritdoc}
