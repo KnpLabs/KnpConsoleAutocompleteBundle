@@ -4,7 +4,13 @@ This bundle provides a simple way of autocompleting your commands in your shell.
 
 ## Installation
 
-Download the bundle and put it under the `Knp/` namespace.
+If you are following symfony-standard deps you can do this:
+
+    [ConsoleAutocompleteBundle]
+    git=https://github.com/knplabs/KnpConsoleAutocompleteBundle.git
+    target=/bundles/Knp/Bundle/ConsoleAutocompleteBundle
+
+If not then just download the bundle and put it under the `Knp/` namespace or
 
 If you use git submodules:
 
@@ -26,7 +32,7 @@ Then, like for any other bundle, include it in your Kernel class:
         ...
     }
     
-The first time you install `ConsoleAutocompleteBundle` in a project, you should add `Resources/Shells/symfony2-completion.bash` in your bash profile (in `~/.bash_profile` on MacOS):
+The first time you install `ConsoleAutocompleteBundle` in a project, you should add `Resources/Shells/symfony2-completion.bash` in your bash profile (in `~/.bash_profile` on MacOS and `~/.bashrc` on Ubuntu Debian or other linux):
 
     ...
     source /path-to-symfony2-completion.bash
@@ -35,7 +41,7 @@ That's it! Now when you type:
 
 `./app/console doc[TAB]`, you should see an autocompletion of the command name.
 
-`./app/console doctrine:data:load --[TAB]`, you should see an autocompletion of the option names.
+`./app/console doctrine:fixtures:load --[TAB]`, you should see an autocompletion of the option names.
 
 Valid executable names are:
 
