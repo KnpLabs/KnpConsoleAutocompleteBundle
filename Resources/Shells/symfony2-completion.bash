@@ -28,40 +28,40 @@ _console()
 
     # this does the first autocomplete for the first word after the app/console or
     # cmd command word
-    if [[ ${COMP_CWORD} = 1 ]] ; then
+    #if [[ ${COMP_CWORD} = 1 ]] ; then
         COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
         return 0
-    fi
+    #fi
 
     # this does the second autocomplete for the second word after the first word
     # but only enters into effect when the previous word was help
-    if [[ ${COMP_CWORD} = 2 ]] ; then
-        case "${prev}" in
-            help)
-                COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
-                return 0
-                ;;
-            *)
-                ;;
-        esac
-    fi
+    #if [[ ${COMP_CWORD} = 2 ]] ; then
+    #    case "${prev}" in
+    #        help)
+    #            COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+    #            return 0
+    #            ;;
+    #        *)
+    #            ;;
+    #    esac
+    #fi
 
     # this does the autocomplete for the following words
     # but only addresses case when the word being completed starts with --
-    if [[ ${COMP_CWORD} > 1 ]] ; then
-        case "${cur}" in
-            --*)
-                COMPREPLY=( $(compgen -W "$(${cmd} console:autocomplete ${COMP_WORDS[1]})" -- ${cur}) )
-                return 0
-                ;;
-            *)
-                ;;
-        esac
-    fi
+    #if [[ ${COMP_CWORD} > 1 ]] ; then
+    #    case "${cur}" in
+    #        --*)
+    #            COMPREPLY=( $(compgen -W "$(${cmd} console:autocomplete ${COMP_WORDS[1]})" -- ${cur}) )
+    #            return 0
+    #            ;;
+    #        *)
+    #            ;;
+    #    esac
+    #fi
 
     # if all fails to return finally completes for a [filename] current word
-    COMPREPLY=( $(compgen -f ${cur}) )
-    return 0
+    #COMPREPLY=( $(compgen -f ${cur}) )
+    #return 0
 }
 # completes with this closure the command console
 complete -F _console console
