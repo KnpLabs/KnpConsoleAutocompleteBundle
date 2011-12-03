@@ -7,14 +7,14 @@ This bundle provides a simple way of autocompleting your commands in your shell.
 If you are following symfony-standard deps you can do this:
 
     [ConsoleAutocompleteBundle]
-    git=https://github.com/knplabs/KnpConsoleAutocompleteBundle.git
+    git=https://github.com/KnpLabs/KnpConsoleAutocompleteBundle.git
     target=/bundles/Knp/Bundle/ConsoleAutocompleteBundle
 
 If not then just download the bundle and put it under the `Knp/` namespace or
 
 If you use git submodules:
 
-    git submodule add https://github.com/knplabs/ConsoleAutocompleteBundle.git vendor/bundles/Knp/Bundle/ConsoleAutocompleteBundle
+    git submodule add https://github.com/KnpLabs/ConsoleAutocompleteBundle.git vendor/bundles/Knp/Bundle/ConsoleAutocompleteBundle
 
 Then, like for any other bundle, include it in your Kernel class:
 
@@ -54,7 +54,7 @@ If none of these names do it for you, you can enable completion for your own exe
 
 ## Copyright & Credits
 
-ConsoleAutocompleteBundle Copyright (c) 2011 [KnpLabs](http://www.KnpLabs.com).  
+ConsoleAutocompleteBundle Copyright (c) 2011 [KnpLabs](http://KnpLabs.com).  
 See LICENSE for details.
 
 Contributors:
