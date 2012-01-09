@@ -14,7 +14,7 @@ If not then just download the bundle and put it under the `Knp/` namespace or
 
 If you use git submodules:
 
-    git submodule add https://github.com/KnpLabs/ConsoleAutocompleteBundle.git vendor/bundles/Knp/Bundle/ConsoleAutocompleteBundle
+    git submodule add https://github.com/KnpLabs/KnpConsoleAutocompleteBundle.git vendor/bundles/Knp/Bundle/ConsoleAutocompleteBundle
 
 Then, like for any other bundle, include it in your Kernel class:
 
