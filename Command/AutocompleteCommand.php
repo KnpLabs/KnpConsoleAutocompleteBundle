@@ -59,13 +59,13 @@ EOT
         $options = array_map(function($option) {
             return '--' . $option->getName();
         }, $options);
-        $output->write(join(" ", $options), false);
+        $output->write(join("\n", $options), false);
     }
     
     protected function autocompleteCommandName(InputInterface $input, OutputInterface $output)
     {
         $commands = $this->getApplication()->all();
         $commands = array_keys($commands);
-        $output->write(join(" ", $commands), false);
+        $output->write(join("\n", $commands), false);
     }
 }
