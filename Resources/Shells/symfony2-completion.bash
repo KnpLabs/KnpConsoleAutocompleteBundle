@@ -36,6 +36,7 @@ _console()
                 return 0
                 ;;
             *)
+                return 1
                 ;;
         esac
     fi
@@ -43,6 +44,6 @@ _console()
     COMPREPLY=( $(compgen -f ${cur}) )
     return 0
 }
-complete -F _console console 
-complete -F _console Symfony
+complete -o default -F _console console 
+complete -o default -F _console Symfony
 COMP_WORDBREAKS=${COMP_WORDBREAKS//:}
