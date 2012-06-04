@@ -1,3 +1,7 @@
+THIS PROJECT IS NO LONGER MAINTAINED by KnpLabs
+------------------------------------------------
+Contact us if you want to be the official maintainer of this Bundle
+
 # ConsoleAutocompleteBundle
 
 This bundle provides a simple way of autocompleting your commands in your shell.
